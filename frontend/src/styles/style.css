@@ -7,6 +7,13 @@
     font-size: 4em;
 }
 
+.ConfigTittle{
+    padding-top: 50px;
+    color: rgb(0, 0, 0);
+    font-family: 'Reggae One', cursive;
+    font-size: 3em;
+}
+
 .HomeButton {
     display: inline-block;
     margin-top: 3em;
@@ -25,6 +32,73 @@
       background: #ff0000;
   }
 
+  .FormButtonConfirm{
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Reggae One', cursive;
+    font-size: 1.5em;
+    margin-left: 5px;
+    padding: 10px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.781);
+    background: #4fad7a;
+  }
+  .FormButtonConfirm:hover,
+  .FormButtonConfirm.active{
+    color: rgba(255, 255, 255, 0.781);
+    background: #245e35;
+  }
+  .FormButtonCancel{
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Reggae One', cursive;
+    font-size: 1.5em;
+    margin-left: 5px;
+    padding: 10px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.781);
+    background: #f14f4f;
+  }
+  .FormButtonCancel:hover,
+  .FormButtonCancel.active{
+    color: rgba(255, 255, 255, 0.781);
+    background: #ff0000;
+  }
+  .container_FormButton{
+      padding-bottom:134px ;
+  }
   .container_HomeButton{
       padding-bottom: 213px;
   }
+
+.container_Form_Config{
+    width: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-radius: 5px;
+    padding: 18px;
+    background: rgba(252, 144, 144, 0.404);
+    box-shadow: 2px 2px 3px 2px #ffffff,
+                2px 2px 3px 2px #ffffff;
+    color: rgba(255, 255, 255, 0.822);
+    font-family: 'Reggae One', cursive;
+}
+.form-control{
+    margin-top: 20px;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: rgba(240, 144, 144, 0.425);
+    box-shadow:  2px 3px 4px 2px #ff0000ad,
+                2px 3px 4px 2px #f84646;
+}
+
+.form-control:hover,
+.form-control.actvie{
+    background: rgba(252, 122, 122, 0.596);
+}
