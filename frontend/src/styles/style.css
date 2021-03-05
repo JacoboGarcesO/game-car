@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+.HomeTittle{
+    padding-top: 200px;
+    color: rgba(255, 255, 255, 0.822);
+    font-family: 'Reggae One', cursive;
+    font-size: 4em;
+}
+
+.HomeButton {
+    display: inline-block;
+    margin-top: 3em;
+    font-family: 'Reggae One', cursive;
+    font-size: 2em;
+    padding: 10px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.781);
+    background: #f14f4f;
+  }
+  
+  .HomeButton:hover,
+  .HomeButton.active {
+      color: rgba(255, 255, 255, 0.781);
+      background: #ff0000;
+  }
+
+  .container_HomeButton{
+      padding-bottom: 213px;
+  }

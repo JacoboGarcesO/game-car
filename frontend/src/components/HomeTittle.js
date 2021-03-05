@@ -1,6 +1,10 @@
 import React from 'react';
 
 const HomeTittle = () => {
-    return (<h1>Home</h1>);
+    return (
+        <div className="text-center">
+            <h1 className="HomeTittle">Minijuegos SofkaU</h1>
+        </div>
+    );
 }
 export default HomeTittle;
