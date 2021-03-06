@@ -5,7 +5,7 @@ import ConfigForm from '../components/ConfigForm';
 
 const Configuration = () => {
     return (
-        <div style={{ backgroundImage: `url(${Wallpaper})` }}>
+        <div className="fondo" style={{ backgroundImage: `url(${Wallpaper})` }}>
             <ConfigTittle />
             <ConfigForm />
         </div>

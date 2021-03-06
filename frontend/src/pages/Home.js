@@ -5,7 +5,7 @@ import Wallpaper from '../images/wallpaper-game.jpg';
 
 const Home = () => {
     return (
-        <div style={{backgroundImage: `url(${Wallpaper})`}}>
+        <div className="fondo" style={{backgroundImage: `url(${Wallpaper})`}}>
             <HomeTittle />
             <HomeButton />
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import axios from '../axios/axios.js';
+import axios from '../axios/axios';
 const ConfigForm = () => {
     const [kmts, setKmts] = useState([]);
     const [num, setNum] = useState([]);
@@ -16,7 +16,12 @@ const ConfigForm = () => {
             if (kmts.km_pista >= 1) {
                 axios.post('/game', request).then((response) => {
                     if (response.status === 200) {
-                        window.location.href = "/games";
+                        Swal.fire({
+                            title: "Juego registrado",
+                            icon: "success",
+                            confirmButtonText: "¡Entendido!",
+                            confirmButtonColor: "#4fad7a"
+                        });
                     } else {
                         Swal.fire({
                             title: "Juego no registrado",
@@ -66,9 +71,13 @@ const ConfigForm = () => {
                 </div>
             </div>
             <div className="container_FormButton">
-                <Link to={"/"}><button className="FormButtonCancel">Volver</button></Link>
-                <button type="submit" onClick={registerGame} className="FormButtonConfirm">Enviar</button>
+                <button type="submit" onClick={registerGame} className="FormButtonConfirm">Agregar</button>
             </div>
+                <Link to={"/"}><button className="FormButtonCancel">Volver</button></Link>
+                <Link to={"/games"}><button className="FormButtonConfirm">Juegos</button></Link>
+                <br/>
+                <br/>
+                <br/>
         </div>
     );
 }
