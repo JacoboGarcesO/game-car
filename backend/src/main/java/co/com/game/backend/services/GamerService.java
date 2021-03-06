@@ -18,4 +18,7 @@ public class GamerService {
     public Gamer save(Gamer gamer){
         return repository.save(gamer);
     }
+    public boolean isExist(Long id){
+        return repository.existsById(id);
+    }
 }

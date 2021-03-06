@@ -23,8 +23,8 @@ public class GamerController {
     }
 
     @PutMapping(path = "/gamer")
-    public Gamer update(Gamer gamer){
-        if(gamer.getId()!=null){
+    public Gamer update(@RequestBody Gamer gamer){
+        if(service.isExist(gamer.getId())){
             return service.save(gamer);
         }
         throw new RuntimeException("No hay ningún registro con ese ID");

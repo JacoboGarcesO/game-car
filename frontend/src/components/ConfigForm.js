@@ -14,7 +14,7 @@ const ConfigForm = () => {
     const registerGame = () => {
         if (num.num_jugadores >= 3) {
             if (kmts.km_pista >= 1) {
-                axios.post('/game', request).then((response) => {
+                axios.post('/game/game', request).then((response) => {
                     if (response.status === 200) {
                         Swal.fire({
                             title: "Juego registrado",
