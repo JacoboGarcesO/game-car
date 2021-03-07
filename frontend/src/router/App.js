@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Configuration from '../pages/Configuration';
 import Games from '../pages/Games';
 import Gamers from '../pages/Gamers';
+import GameRunning from '../pages/GameRunning';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/configuration" component={Configuration} />
         <Route path="/games" component={Games} />
         <Route path="/gamers" component={Gamers} />
+        <Route path="/game-running" component={GameRunning} />
       </Switch>
     </BrowserRouter>
   );

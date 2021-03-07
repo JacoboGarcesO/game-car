@@ -31,7 +31,7 @@ const EditGamer=(gamer)=>{
                 </div>
                 <Modal.Footer className="mx-auto">
                     <button className="ButtonDelete" onClick={handleClose}>
-                        Cancel
+                        Cancelar
                     </button>
                     <button className="ButtonRun" onClick={(event)=>{
                       console.log(gamer.prop.id);
@@ -47,7 +47,7 @@ const EditGamer=(gamer)=>{
                         console.log(response)
                       })
                     }}>
-                        Save changes
+                        Guardar
                     </button>
                 </Modal.Footer>
             </form>

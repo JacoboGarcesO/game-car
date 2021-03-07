@@ -36,16 +36,8 @@ const GamesTable = () => {
                             <td>{item.km}</td>
                             <td><button onClick={()=>{
                                 saveToLocal("idGame", item.id)
-                                for (let i = 0; i < item.players; i++) {
-                                    axios.post('/gamer/gamer', {
-                                        "id":null, 
-                                        "name":null, 
-                                        "idGame":item.id,
-                                        "percentage":0
-                                    }).then((res)=>{
-                                        window.location.href="/gamers";
-                                    })
-                                }
+                                saveToLocal("kmGame", item.km)
+                                window.location.href="/gamers";
                             }} className="ButtonRun">Iniciar</button></td>
                             <td><button onClick={() => {
                                 axios.delete(`/game/${item.id}`).then(window.location.reload());

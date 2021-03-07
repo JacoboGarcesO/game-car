@@ -22,9 +22,7 @@ public class Gamer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
@@ -45,4 +43,5 @@ public class Gamer {
     public void setPercentage(Long percentage) {
         this.percentage = percentage;
     }
+
 }

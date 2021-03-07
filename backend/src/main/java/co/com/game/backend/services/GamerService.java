@@ -21,4 +21,18 @@ public class GamerService {
     public boolean isExist(Long id){
         return repository.existsById(id);
     }
+
+    public void generateAdvance(Long id, Long limit){
+        int dado;
+        long percentage;
+
+        for (Gamer p: repository.findAllByidGame(id)) {
+            dado=(int)(Math.ceil( Math.random()*6))*100;
+            percentage=(dado*100)/(limit*1000);
+            p.setPercentage(p.getPercentage()+percentage);
+            if(p.getPercentage()<=100){
+                repository.save(p);
+            }
+        }
+    }
 }

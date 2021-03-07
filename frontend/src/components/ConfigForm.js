@@ -22,6 +22,14 @@ const ConfigForm = () => {
                             confirmButtonText: "¡Entendido!",
                             confirmButtonColor: "#4fad7a"
                         });
+                        for (let i = 0; i < num.num_jugadores; i++) {
+                            axios.post('/gamer/gamer', {
+                                "id":null, 
+                                "name":null, 
+                                "idGame":response.data['id'],
+                                "percentage":0
+                            })
+                        }
                     } else {
                         Swal.fire({
                             title: "Juego no registrado",

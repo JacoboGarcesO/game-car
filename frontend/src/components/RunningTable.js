@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import axios from '../axios/axios';
 import {getFromLocal} from '../functions/localStorage';
-import EditGamer from './EditGamer';
 
-const GamersTable = () => {
+const RunningTable = () => {
     const idGame=getFromLocal("idGame");
+    const kmGame=getFromLocal("kmGame");
     const [gamers, setGamers] = useState([])
 
     const getGamers = () => {
@@ -13,6 +13,8 @@ const GamersTable = () => {
             setGamers(response.data);
         });
     }
+
+    let interval=setInterval(()=> axios.get(`/gamer/run/${idGame}/${kmGame}`), 3000);
     useEffect(() => {
         getGamers();
         //eslint-disable-next-line
@@ -20,14 +22,14 @@ const GamersTable = () => {
     return (
         <div className="text-center">
             <br/>
-            <Link to={"/games"}><button className="FormButtonCancel">Volver</button></Link>
+            <Link to={"/games"}><button className="FormButtonCancel">Abandonar</button></Link>
             <table>
                 <thead>
                     <tr>
                         <td className="tittleTable">#</td>
                         <td className="tittleTable">Nombre</td>
+                        <td className="tittleTable">Porcentaje</td>
                         <td className="tittleTable">Juego</td>
-                        <td className="tittleTable">Nombrar</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,16 +37,14 @@ const GamersTable = () => {
                         <tr key={item.id}>
                             <td>{item.id}</td>
                             <td>{item.name}</td>
+                            <td>{item.percentage}</td>
                             <td>{item.idGame}</td>
-                            <td><EditGamer prop={item}/></td>
                         </tr>
                     ))}
                 </tbody>
-            </table>
-                <Link to="/game-running"><button style={{marginBottom:'19px'}} className="FormButtonConfirm">Jugar</button></Link>
-                           
+            </table>                           
             <br/>
         </div>
     );
 }
-export default GamersTable;
+export default RunningTable;

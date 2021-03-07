@@ -29,4 +29,8 @@ public class GamerController {
         }
         throw new RuntimeException("No hay ningún registro con ese ID");
     }
+    @GetMapping(path = "/run/{id}/{km}")
+    public void generateAdvance(@PathVariable("id") Long id, @PathVariable("km") Long km){
+        service.generateAdvance(id, km);
+    }
 }
