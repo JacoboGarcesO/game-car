@@ -14,7 +14,10 @@ const RunningTable = () => {
         });
     }
 
-    let interval=setInterval(()=> axios.get(`/gamer/run/${idGame}/${kmGame}`), 3000);
+    let interval=setInterval(()=> {
+        axios.get(`/gamer/run/${idGame}/${kmGame}`).then(window.location.reload());
+        
+    }, 3000);
     useEffect(() => {
         getGamers();
         //eslint-disable-next-line
@@ -37,7 +40,7 @@ const RunningTable = () => {
                         <tr key={item.id}>
                             <td>{item.id}</td>
                             <td>{item.name}</td>
-                            <td>{item.percentage}</td>
+                            <td>{item.percentage}%</td>
                             <td>{item.idGame}</td>
                         </tr>
                     ))}
